@@ -1,0 +1,51 @@
+.root {
+  position: relative;
+  display: flex;
+  background-color: transparent;
+  padding: 4px;
+  border-radius: var(--mantine-radius-xl);
+}
+
+.control {
+  position: relative;
+  z-index: 1;
+  padding: 8px 16px;
+  border-radius: var(--mantine-radius-xl);
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  color: var(--mantine-color-gray-7);
+  transition: color 150ms ease;
+
+  &:hover {
+    color: var(--mantine-color-black);
+  }
+
+  &[data-active] {
+    color: var(--mantine-color-black);
+    font-weight: 600;
+  }
+}
+
+.controlLabel {
+  position: relative;
+  z-index: 2;
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: var(--mantine-radius-xl);
+  
+
+  background-color: rgba(255, 255, 255, 0.55);
+  
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+              
+  transition: transform 200ms ease, width 200ms ease;
+}
