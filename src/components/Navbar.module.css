@@ -1,4 +1,4 @@
-.root {
+.root.root {
   position: relative;
   display: flex;
   background-color: transparent;
@@ -6,7 +6,7 @@
   border-radius: var(--mantine-radius-xl);
 }
 
-.control {
+.control.control {
   position: relative;
   z-index: 1;
   padding: 8px 16px;
@@ -26,12 +26,12 @@
   }
 }
 
-.controlLabel {
+.controlLabel.controlLabel {
   position: relative;
   z-index: 2;
 }
 
-.indicator {
+.indicator.indicator {
   position: absolute;
   top: 0;
   bottom: 0;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Badge, FloatingIndicator, Group, Paper, SegmentedControl, UnstyledButton } from '@mantine/core';
+import { FloatingIndicator, Group, Paper, UnstyledButton } from '@mantine/core';
 import classes from './Navbar.module.css';
 
 const navItems = [
@@ -33,21 +33,22 @@ export default function Navbar() {
       component="header"
       shadow="sm"
       radius="xl"
-      withBorder
+      withBorder={false}
+      w="fit-content"
       p="sm"
-      mx="lg" // Margin Left & Right
-      mt="lg" // Margin Top
+      mx="auto" // Margin Left & Right
+      mt="lg"
       style={{
         position: 'sticky',
         top: '16px',
         zIndex: 100,
-        backdropFilter: 'blur(8px)',
+        backdropFilter: 'blur(8px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(8px) saturate(180%)',
         backgroundColor: 'rgba(255, 255, 255, 0.75)',
+
       }}
     >
-      <Group justify="space-between" px="md">
-        KT
-
+      <Group justify="center" px="md">
         <div className={classes.root} ref={setRootRef}>
           {navItems.map((item) => (
             <UnstyledButton
