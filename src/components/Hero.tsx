@@ -7,7 +7,7 @@ function Hero() {
     <Container size="lg" py={{ base: 40, md: 80 }}>
       <Grid align="center" gutter={{ base: 'xl', md: 50 }}>
         <Grid.Col span={{ base: 12, md: 7 }}>
-          <Stack gap="md" align="center">
+          <Stack gap="xl" align="center">
             <Badge variant="light" color="blue" size="lg" radius="xl">
               Open to Opportunities
             </Badge>
