@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 import Projects from './Projects';
 import Skills from './Skills';
+import TechStacks from './TechStacks';
 
 const theme = createTheme({
   other: {
@@ -23,6 +24,9 @@ export default function App() {
       </section>
       <section id="skills">
         <Skills />
+      </section>
+      <section id="stacks">
+        <TechStacks />
       </section>
     </MantineProvider>
   )

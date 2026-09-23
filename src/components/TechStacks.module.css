@@ -1,0 +1,65 @@
+.gridWrapper.gridWrapper {
+  min-height: 480px;
+  transition: min-height 200ms ease;
+}
+
+@media (min-width: 768px) {
+  .gridWrapper.gridWrapper {
+    min-height: 420px;
+  }
+}
+
+.badgeBtn.badgeBtn {
+  padding: 8px 18px;
+  border-radius: var(--mantine-radius-xl);
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  color: var(--mantine-color-gray-7);
+  background-color: rgba(0, 0, 0, 0.04);
+  border: 1px solid transparent;
+  transition: all 180ms ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: var(--mantine-color-black);
+  }
+
+  &[data-active] {
+    background-color: var(--mantine-color-cyan-3);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(34, 139, 230, 0.25);
+  }
+}
+
+:global([data-mantine-color-scheme='dark']) .badgeBtn.badgeBtn {
+  color: var(--mantine-color-dark-1);
+  background-color: rgba(255, 255, 255, 0.05);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--mantine-color-white);
+  }
+
+  &[data-active] {
+    background-color: var(--mantine-color-blue-6);
+    color: #ffffff;
+  }
+}
+
+.stackItem.stackItem {
+  padding: 12px;
+  cursor: default;
+  user-select: none;
+}
+
+.icon.icon {
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 200ms ease;
+  opacity: 0.9;
+}
+
+.stackItem.stackItem:hover .icon.icon {
+  transform: translateY(-4px) scale(1.15);
+  opacity: 1;
+}

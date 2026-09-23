@@ -14,7 +14,6 @@ const popoverItems = [
   { label: 'Contact', id: 'contact' },
 ];
 
-
 export default function Navbar() {
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null);
   const [controlsRefs, setControlsRefs] = useState<Record<string, HTMLButtonElement | null>>({});
