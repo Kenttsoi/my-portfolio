@@ -4,7 +4,7 @@ import { IconQuote } from '@tabler/icons-react';
 
 function Hero() {
   return (
-    <Container size="lg" py={{ base: 40, md: 80 }}>
+    <Container size="lg" py={{ base: 40, md: 80 }} >
       <Grid align="center" gutter={{ base: 'xl', md: 50 }}>
         <Grid.Col span={{ base: 12, md: 7 }}>
           <Stack gap="xl" align="center">
@@ -34,7 +34,7 @@ function Hero() {
             <Text fz={{ base: 'lg', md: 'xl' }} fw={700} c="dimmed">
               Full Stack Developer
             </Text>
-            <Group gap="md" py="md">
+            <Group gap="md" py="md" justify="center">
               <Button
                 size="md"
                 radius="xl"
