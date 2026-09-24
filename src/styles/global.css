@@ -4,7 +4,21 @@ html {
   scroll-behavior: smooth;
 }
 
-section, 
+:root,
+[data-mantine-color-scheme='light'] {
+  --app-bg-color: #FAFAFF;
+}
+
+[data-mantine-color-scheme='dark'] {
+  --app-bg-color: #12151E;
+}
+
+body {
+  background-color: var(--app-bg-color) !important;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+section,
 [id] {
   scroll-margin-top: 69px;
 }

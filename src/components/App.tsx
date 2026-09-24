@@ -15,7 +15,7 @@ const theme = createTheme({
 
 export default function App() {
   return (
-    <MantineProvider theme={theme} defaultColorScheme="light">
+    <MantineProvider theme={theme}>
       <Navbar />
       <section id="hero">
         <Hero />

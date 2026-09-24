@@ -74,14 +74,13 @@ export default function Navbar() {
         p="sm"
         mx="auto" // Margin Left & Right
         mt="lg"
+        className={classes.navbarColor}
         style={{
           position: 'sticky',
           top: '16px',
           zIndex: 101,
           backdropFilter: 'blur(8px) saturate(180%)',
           WebkitBackdropFilter: 'blur(8px) saturate(180%)',
-          backgroundColor: 'rgba(255, 255, 255, 0.75)',
-
         }}
       >
         <Group justify="center" px="sm" gap="xs" wrap="nowrap">

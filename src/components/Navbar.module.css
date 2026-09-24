@@ -6,6 +6,17 @@
   border-radius: var(--mantine-radius-xl);
 }
 
+.navbarColor.navbarColor {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 0px;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+:global([data-mantine-color-scheme='dark']) .navbarColor.navbarColor {
+  background-color: rgba(30, 35, 48, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .control.control {
   position: relative;
   z-index: 1;
@@ -13,7 +24,7 @@
   border-radius: var(--mantine-radius-xl);
   font-size: var(--mantine-font-size-sm);
   font-weight: 500;
-  color: var(--mantine-color-gray-7);
+  color: var(--mantine-color-gray-6);
   transition: color 150ms ease;
 
   &:hover {
@@ -48,6 +59,12 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
               
   transition: transform 200ms ease, width 200ms ease;
+}
+
+:global([data-mantine-color-scheme='dark']) .indicator.indicator {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .viewportCenteredPopover.viewportCenteredPopover {
@@ -100,10 +117,21 @@
 .menuItem.menuItem:hover {
   background-color: #17a8c3 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(0, 168, 150, 0.35);
+  box-shadow: 0 4px 14px rgba(23, 168, 195, 0.35);
+  transition: all 180ms ease;
 }
 
 .menuItem.menuItem:hover .menuIcon.menuIcon {
+  color: #ffffff !important;
+}
+
+:global([data-mantine-color-scheme='dark']) .menuItem.menuItem:hover {
+  background-color: #1593ab !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(23, 168, 195, 0.45);
+}
+
+:global([data-mantine-color-scheme='dark']) .menuItem.menuItem:hover .menuIcon.menuIcon {
   color: #ffffff !important;
 }
 
