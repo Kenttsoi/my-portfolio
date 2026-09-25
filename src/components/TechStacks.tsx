@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Title, Text, SimpleGrid, Stack, Group, Box, UnstyledButton } from '@mantine/core';
+import { Container, Title, Text, SimpleGrid, Stack, Group, Box, UnstyledButton, useComputedColorScheme } from '@mantine/core';
 import {
   IconBrandJavascript,
   IconBrandTypescript,
@@ -26,7 +26,7 @@ type Category = 'All' | 'Programming Languages' | 'Frameworks & Libraries' | 'To
 interface StackItem {
   name: string;
   icon: React.ElementType;
-  color: string;
+  color: string | { light: string; dark: string };
   category: Category;
 }
 
@@ -50,7 +50,7 @@ const allStackItems: StackItem[] = [
   // Frameworks
   { name: 'React', icon: IconBrandReact, color: '#61DAFB', category: 'Frameworks & Libraries' },
   { name: 'Redux', icon: IconBrandRedux, color: '#764ABC', category: 'Frameworks & Libraries' },
-  { name: 'Flask', icon: IconServer, color: '#000000', category: 'Frameworks & Libraries' },
+  { name: 'Flask', icon: IconServer, color: { light: '#000000', dark: '#FFFFFF' }, category: 'Frameworks & Libraries' },
   { name: 'Express', icon: IconBrandNodejs, color: '#339933', category: 'Frameworks & Libraries' },
   { name: 'Node.js', icon: IconBrandNodejs, color: '#5FA04E', category: 'Frameworks & Libraries' },
   { name: 'CodeIgniter', icon: IconFlame, color: '#EF4223', category: 'Frameworks & Libraries' },
@@ -70,6 +70,9 @@ const allStackItems: StackItem[] = [
 
 export default function TechStacks() {
   const [activeCategory, setActiveCategory] = useState<Category>('All');
+
+  const computedColorScheme = useComputedColorScheme('light');
+  const isDark = computedColorScheme === 'dark';
 
   const filteredItems = activeCategory === 'All'
     ? allStackItems
@@ -121,7 +124,7 @@ export default function TechStacks() {
                       <Stack align="center" gap="md">
                         <IconComponent
                           size={32}
-                          style={{ color: item.color }}
+                          style={{ color: typeof item.color === 'object' ? (isDark ? item.color.dark : item.color.light) : item.color }}
                           stroke={1.5}
                           className={classes.icon}
                         />

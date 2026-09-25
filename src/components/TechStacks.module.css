@@ -43,7 +43,7 @@
   }
 
   &[data-active] {
-    background-color: var(--mantine-color-blue-6);
+    background-color: var(--mantine-color-cyan-8);
     color: #ffffff;
   }
 }

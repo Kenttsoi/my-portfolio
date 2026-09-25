@@ -5,13 +5,13 @@
   cursor: pointer;
   border: none;
 
-  transition: 
-    box-shadow 500ms ease-out, 
+  transition:
+    box-shadow 500ms ease-out,
     transform 500ms ease-out;
 }
 
 .skillCard.skillCard:hover {
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04);
   transform: translateY(-3px);
@@ -32,4 +32,28 @@
 
 .skillCard.skillCard[data-neighbor="bottom"] {
   box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.06);
+}
+
+:global([data-mantine-color-scheme='dark']) .skillCard.skillCard:hover {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(18, 184, 134, 0.25);
+  transform: translateY(-3px);
+  z-index: 2;
+}
+
+:global([data-mantine-color-scheme='dark']) .skillCard.skillCard[data-neighbor="left"] {
+  box-shadow: -8px 0 16px -6px rgba(255, 255, 255, 0.08);
+}
+
+:global([data-mantine-color-scheme='dark']) .skillCard.skillCard[data-neighbor="right"] {
+  box-shadow: 8px 0 16px -6px rgba(255, 255, 255, 0.08);
+}
+
+:global([data-mantine-color-scheme='dark']) .skillCard.skillCard[data-neighbor="top"] {
+  box-shadow: 0 -8px 16px -6px rgba(255, 255, 255, 0.08);
+}
+
+:global([data-mantine-color-scheme='dark']) .skillCard.skillCard[data-neighbor="bottom"] {
+  box-shadow: 0 8px 16px -6px rgba(255, 255, 255, 0.08);
 }

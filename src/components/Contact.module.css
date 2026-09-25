@@ -7,7 +7,7 @@
 }
 
 :global([data-mantine-color-scheme='dark']) .cardContainer.cardContainer {
-  background-color: var(--mantine-color-dark-6);
+  background-color: var(--mantine-color-gray-9);
 }
 
 .title.title {
