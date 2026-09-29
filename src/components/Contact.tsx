@@ -1,11 +1,14 @@
 import { Container, Title, Text, Stack, Group, Box, Anchor, UnstyledButton } from '@mantine/core';
-import { IconMail } from '@tabler/icons-react';
+import { IconMail, IconBrandGithub } from '@tabler/icons-react';
 import classes from './Contact.module.css';
 
 const contactData = {
-  email: '',
+  email: 'kenttsoi39@gmail.com',
   navLinks: [
-    { label: 'About', href: '#about' },
+    { label: 'About me', href: '#hero' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Stacks', href: '#stacks' },
   ],
 };
 
@@ -63,6 +66,15 @@ export default function Contact() {
                   {link.label}
                 </Anchor>
               ))}
+              <Anchor
+                href=''
+                target='_blank'
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                underline="never"
+              >
+                <IconBrandGithub size={24} color="currentColor" stroke={1.5} /><span>My GitHub</span>
+              </Anchor>
             </Group>
           </Box>
 

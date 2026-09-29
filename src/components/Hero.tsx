@@ -75,9 +75,8 @@ function Hero() {
                 }}
               />
 
-              <Text size="lg" p={'sm'} c="dimmed" lh={1.6} ta="justify" style={{ position: 'relative', zIndex: 1 }}>
-                Building robust, user-centric web applications with React, TypeScript, Python, and PostgreSQL.
-                Focused on clean code, seamless user experiences, and solid system architecture.
+              <Text size="lg" p={'sm'} c="gray.6" lh={1.6} ta="justify" style={{ position: 'relative', zIndex: 1 }}>
+                Full Stack Developer with 4 years of practical experience, specializing in end-to-end application development, product implementation, backend logic, and database management. Hands-on experience in cross-functional team collaboration, user requirement gathering, and building practical software products.
               </Text>
             </Box>
 
