@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, Image, Text, Badge, Group, Button, Box, Stack } from '@mantine/core';
+import { Card, Image, Text, Badge, Group, Button, Box, Stack, List } from '@mantine/core';
 import classes from './ProjectCard.module.css';
 
 export interface ProjectData {
@@ -7,6 +7,7 @@ export interface ProjectData {
   title: string;
   category: string;
   description: string;
+  highlights: string[];
   image: string;
   tags: string[];
   demoUrl?: string;
@@ -32,16 +33,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       <Image
         src={project.image}
-        height={350}
+        height={500}
         alt={project.title}
         fallbackSrc="https://placehold.co/600x400?text=Project+Preview"
       />
 
       <Box className={classes.defaultOverlay}>
-        <Text fw={700} size="lg" c="white">
+        <Text fw={700} size="xl" c="white">
           {project.title}
         </Text>
-        <Text size="xs" c="gray.3">
+        <Text size="md" c="gray.3">
           {project.category}
         </Text>
       </Box>
@@ -57,13 +58,31 @@ export function ProjectCard({ project }: ProjectCardProps) {
               {project.title}
             </Text>
 
-            <Text size="md" c="gray.3" lineClamp={3}>
+            <Text size="md" c="gray.3" lineClamp={5}>
               {project.description}
             </Text>
 
+            {project.highlights && project.highlights.length > 0 && (
+              <List
+                size="md"
+                c="gray.2"
+                spacing={4}
+                withPadding
+                style={{ listStyleType: 'disc' }}
+              >
+                {project.highlights.slice(0, 3).map((item, index) => (
+                  <List.Item key={index}>
+                    <Text size="md" c="gray.3" lineClamp={2}>
+                      {item}
+                    </Text>
+                  </List.Item>
+                ))}
+              </List>
+            )}
+
             <Group gap={6} mt="xs">
               {project.tags.map((tag) => (
-                <Badge key={tag} variant="outline" color="gray" size="lg" c="gray.2">
+                <Badge key={tag} variant="outline" color="gray" size="lg" c="gray.2" style={{ textTransform: 'none' }}>
                   {tag}
                 </Badge>
               ))}

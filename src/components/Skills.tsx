@@ -52,8 +52,8 @@ export default function Skills() {
 
   return (
     <Container size="lg" py={80} id="skills">
-      <Title order={2} ta="center" mb="xl">
-        What I Do
+      <Title order={2} fz={{ base: 28, md: 36 }} ta={"center"}>
+        What I do
       </Title>
 
       <SimpleGrid
