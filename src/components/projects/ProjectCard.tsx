@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { Card, Image, Text, Badge, Group, Button, Box, Stack, List } from '@mantine/core';
 import classes from './ProjectCard.module.css';
+import { IconBriefcase, IconBuildingSkyscraper, IconUser } from '@tabler/icons-react';
+
+const PROJECT_TYPE_CONFIG: Record<string, React.ReactNode> = {
+  Company: <IconBuildingSkyscraper size={13} />,
+  Individual: <IconUser size={13} />,
+  Commercial: <IconBriefcase size={13} />
+};
 
 export interface ProjectData {
   id: string;
+  projectType: string;
   title: string;
   category: string;
   description: string;
@@ -23,18 +31,31 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <Card
-      shadow="sm"
       padding="0"
       radius="lg"
+      withBorder={false}
+      style={{
+        backgroundColor: 'light-dark(rgb(250, 250, 255), rgb(19, 21, 29))',
+      }}
       className={classes.card}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => setHovered((prev) => !prev)}
     >
+      <Badge
+        variant="filled"
+        radius="sm"
+        size="xl"
+        leftSection={PROJECT_TYPE_CONFIG[project.projectType]}
+        style={{ textTransform: 'none', fontWeight: 600 }}
+      >
+        {project.projectType}{' Project'}
+      </Badge>
       <Image
         src={project.image}
         height={500}
         alt={project.title}
+        radius="sm"
         fallbackSrc="https://placehold.co/600x400?text=Project+Preview"
       />
 
@@ -70,7 +91,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 withPadding
                 style={{ listStyleType: 'disc' }}
               >
-                {project.highlights.slice(0, 3).map((item, index) => (
+                {project.highlights.slice(0, 4).map((item, index) => (
                   <List.Item key={index}>
                     <Text size="md" c="gray.3" lineClamp={2}>
                       {item}
