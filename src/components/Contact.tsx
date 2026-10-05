@@ -67,7 +67,7 @@ export default function Contact() {
                 </Anchor>
               ))}
               <Anchor
-                href=''
+                href='https://github.com/Kenttsoi'
                 target='_blank'
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"

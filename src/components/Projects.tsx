@@ -17,7 +17,7 @@ const projectsData: ProjectData[] = [
     ],
     image: '/public/preview_project1.png',
     tags: ['React', 'TypeScript', 'Python', 'Flask', 'Supabase', 'PostgreSQL', 'Docker'],
-    demoUrl: 'https://demo.example.com',
+    demoUrl: 'https://jpstudy.kentt.dev/',
     githubUrl: 'https://github.com/Kenttsoi/japanese-text-handler',
   },
   {
