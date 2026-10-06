@@ -79,3 +79,43 @@
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
+
+@media (max-width: 48em) {
+  .cardImage.cardImage {
+    height: 190px;
+  }
+
+  .defaultOverlay.defaultOverlay {
+    position: static;
+    display: block;
+
+    padding: 16px;
+
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .detailOverlay.detailOverlay {
+    position: static;
+    inset: auto;
+
+    width: auto;
+    height: auto;
+    margin: 12px;
+    padding: 16px;
+
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    visibility: visible;
+
+    overflow: visible;
+  }
+}
+
+@media (max-width: 48em) {
+  .card.card:hover .defaultOverlay.defaultOverlay,
+  .card.card:focus-within .defaultOverlay.defaultOverlay {
+    opacity: 1;
+  }
+}

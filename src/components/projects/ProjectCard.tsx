@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, Image, Text, Badge, Group, Button, Box, Stack, List } from '@mantine/core';
+import { Card, Image, Text, Badge, Group, Button, Box, Stack, List, Flex } from '@mantine/core';
 import classes from './ProjectCard.module.css';
 import { IconBriefcase, IconBuildingSkyscraper, IconUser } from '@tabler/icons-react';
 
@@ -51,22 +51,24 @@ export function ProjectCard({ project }: ProjectCardProps) {
       >
         {project.projectType}{' Project'}
       </Badge>
-      <Image
-        src={project.image}
-        height={500}
-        alt={project.title}
-        radius="sm"
-        fallbackSrc="https://placehold.co/600x400?text=Project+Preview"
-      />
+      <Flex direction={{ base: 'column-reverse', sm: 'column' }}>
+        <Image
+          src={project.image}
+          height={500}
+          alt={project.title}
+          radius="sm"
+          fallbackSrc="https://placehold.co/600x400?text=Project+Preview"
+        />
 
-      <Box className={classes.defaultOverlay}>
-        <Text fw={700} size="xl" c="white">
-          {project.title}
-        </Text>
-        <Text size="md" c="gray.3">
-          {project.category}
-        </Text>
-      </Box>
+        <Box className={classes.defaultOverlay} bdrs="sm">
+          <Text fw={700} size="xl" c="white">
+            {project.title}
+          </Text>
+          <Text size="md" c="gray.3">
+            {project.category}
+          </Text>
+        </Box>
+      </Flex>
 
       <Box className={`${classes.detailOverlay} ${hovered ? classes.active : ''}`}>
         <Stack justify="space-between" h="100%">
@@ -79,7 +81,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               {project.title}
             </Text>
 
-            <Text size="md" c="gray.3" lineClamp={5}>
+            <Text size="md" c="gray.3">
               {project.description}
             </Text>
 
@@ -93,7 +95,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               >
                 {project.highlights.slice(0, 4).map((item, index) => (
                   <List.Item key={index}>
-                    <Text size="md" c="gray.3" lineClamp={2}>
+                    <Text size="md" c="gray.3">
                       {item}
                     </Text>
                   </List.Item>
